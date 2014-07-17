@@ -1,3 +1,6 @@
+// car.js
+// Michael McClure
+
 var lot = {	make: "Toyota",
 				model: "Corolla",
 				year: 1995,
@@ -7,7 +10,7 @@ var lot = {	make: "Toyota",
 				currOwner: "Manufacturer"
 			};
 
-
+// ******** Car CONSTRUCTOR ********
 function Car (make, model, year, color) {
 	this.make = make,
 	this.model = model,
@@ -19,39 +22,33 @@ function Car (make, model, year, color) {
 	this.passengers = [];
 }
 
+// ******** ADD PROTOTYPES TO Car ********
 Car.prototype.sale = owner1;
-
 Car.prototype.paint = function(paint){
 	return this.color = paint;
 }
-
 Car.prototype.start = function(){
 		return this.state = "on";
 	}
-
 Car.prototype.off = function(){
 	return this.state = "off";
 }
-
 Car.prototype.driveTo = function(destination){
 	if (this.state === "on") {
 		return "Driving to " + destination;
 	};
 }
-
 Car.prototype.park = function(){
 	if (this.state === "off") {
 		return "Parked!!";
 	};
 }
-
 Car.prototype.pickUp = function(name){
 	if (this.state === "on") {
 		this.passengers.push(name);
 		return "Driving to pick up, " + this.passengers;
 	};
 }
-
 Car.prototype.dropOff = function(name){
 	if (this.state === "on") {
 		var drop;
@@ -65,8 +62,10 @@ Car.prototype.dropOff = function(name){
 	};
 }
 
+// ******** NEW INSTANCE OF Car ********
 var owner1 = new Car(lot.make, lot.model, lot.year, lot.color);
 
+// ******** OUTPUT ********
 owner1.sale = "Peter";
 
 console.log(owner1.sale, "drives a", owner1.paint("Red"), "car");
