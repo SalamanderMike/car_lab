@@ -64,6 +64,7 @@ Car.prototype.dropOff = function(name){
 
 // ******** NEW INSTANCE OF Car ********
 var owner1 = new Car(lot.make, lot.model, lot.year, lot.color);
+var test = new Car("Toyota"); // Test instance
 
 // ******** OUTPUT ********
 owner1.sale = "Peter";
@@ -80,3 +81,6 @@ console.log(owner1.passengers, "is in the car, now ((check))");
 owner1.state = "off";
 console.log("He turned the car off, then ", owner1.park());
 
+// to test
+console.log("Test Instance:", test.make);
+module.exports.Car = Car;
